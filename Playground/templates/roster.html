@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+
+{% block title %}Student Roster{% endblock %}
+
+{% block body %}
+
+<!-- asdf -->
+
+<h1 style="font-size:30px;">Roster Info</h1>
+
+{% for student in class_roster %}
+
+{% if grade_view==1 %}
+
+  <li> Name: <b>{{student[0]}}</b> Grade: <span style="color:green;"><b>{{student[1]}}</b></span>
+
+{% endif %}
+
+{% if grade_view==2 %}
+
+  <li> Name: <b>{{student[0]}}</b> Class Standing: {{student[2]}}
+
+{% endif %}
+
+{% if grade_view==0 %}
+
+  <li> Name: <b>{{student[0]}}</b> Grade: <span style="color:green;"><b>{{student[1]}}</b></span> Class Standing: <b>{{student[2]}}</b>
+
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}
